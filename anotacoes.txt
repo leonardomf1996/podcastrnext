@@ -1,0 +1,25 @@
+npx create-react-app podcastr
+
+SSR (Server Side Rendering) e SSG (Static Site Generation)
+
+SSR:
+   Resumindo, quando se faz uma requisição a uma API, o browser quem cria a renderização dos dados. No SSR, existe um segundo "servidor" entre o servidor e o client, que fica responsável por criar a visualização HTML e enviá-la pronta ao client. O Next.js seria esse segundo servidor.
+
+SSG:
+   Resumindo, no caso com Next.js, uma página ficará estática e será exibida para todos os usuários. E só será atualizada inserindo um intervalo de tempo
+
+
+Sair da pasta do podcastr para criarmos um projeto com Next
+
+
+
+
+COMEÇA AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+   npx create-next-app podcastrnext
+
+Limpamos o projeto
+
+yarn dev
+
+código: #missaoespacial
