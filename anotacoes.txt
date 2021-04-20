@@ -1,3 +1,4 @@
+Dia 1:
 npx create-react-app podcastr
 
 SSR (Server Side Rendering) e SSG (Static Site Generation)
@@ -23,3 +24,71 @@ Limpamos o projeto
 yarn dev
 
 código: #missaoespacial
+
+
+Dia 2:
+
+Configuração do TS no projeto com next
+
+Deixa um terminal rodando a aplicação (yarn dev) e outro para instalações
+
+yarn add typescript @types/react @types/node -D
+
+Converter os arquivos existentes para o formato .tsx (index e app)
+
+tsconfig.json e next-env.d.ts são criado automaticamente
+
+Criar pasta src e jogar a pasta pages lá dentro. A pasta pages só pode ficar alocada na raíz ou na pasta src
+   Parar projeto e rodar de novo yarn dev
+
+Criar os estilos globais, em /styles e importar no app.tsx
+
+Utilizaremos o SASS para o css
+   yarn add sass
+   :root {} são guardadas as váriaveis que são visíveis para todo o projeto
+
+_app é o arquivo global que reúne todos os arquivos (como se fosse o index em react puro). E sempre que for atualizado, o componente terá que carregar tudo novamente.
+   Por isso, criamos o _document, que será para importar as fontes
+
+Criar a pasta components, Header
+Baixar os arquivos em public
+
+
+
+yarn add date-fns
+
+Criar pasta Player
+
+
+server.json disponibilizado para Baixar
+
+json-server é uma lib para trabalharmos com apis fakes
+   yarn add json-server -D
+   Criar script "server"
+
+Formas de consumir uma API dentro de react e next
+
+- SPA
+   Utilizando o fetch dentro de um useEffect(). Mas pode ser problemático em indexações e crawlers.   
+
+- SSR
+   A função getServerSideProps é uma função que faz o next entender que ela sempre precisar ser executada antes de retornar um componente para o usuário
+   Dessa forma, sempre que um componente/page for exibido ao usuário, os dados já estarão carregados, pois foram utilizados na camada do next
+
+- SSG
+   No SSR, sempre que uma pessoa acessa uma página, o getServerSideProps é acionado, mesmo que os dados retornados não tenham sofrido alterações.
+   Dessa forma, fica muito custoso! 
+   No SSG, será gerado uma página estática para o primeiro usuário que acessá-la. Quando o próximo usuário acessar a mesma página, ele receberá o mesmo HTML gerado pelo usuário 1, desde que os dados não tenham sido alterados.
+   Para isso, ao invés de usar getServerSideProps, utilizar a função getStaticProps
+
+Para vermos de fato o SSG rodando, apenas em produção. Então, gerar a build do projeto.
+Para a aplicação next e deixar apenas o servidor!
+
+   yarn build
+Quando se faz o build do projeto, é mostrado um log.
+Nas pages, o que tem uma bolinha branca simboliza a página gerada com SSG
+Se tiver uma lambda (parece um 'A' com crase `), simboliza a página gerada com SSR
+
+   yarn start
+
+#embuscadoproximonivel
