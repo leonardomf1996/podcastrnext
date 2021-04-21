@@ -92,3 +92,39 @@ Se tiver uma lambda (parece um 'A' com crase `), simboliza a página gerada com 
    yarn start
 
 #embuscadoproximonivel
+
+
+Dia 3:
+Melhorar a página da Home, adicionando TS
+GetStaticProps é um import feito de next, e é uma tipagem para o getStaticProps
+
+Instalar o axios para utilizar no lugar do fetch
+   yarn add axios
+Criar pasta /services e o arquivo nela
+
+Dica: quando precisar formatar os dados que vem da API, formate-os antes de chegar no return.
+
+Componente Image, do next
+   Necessário criar arquivo na raiz chamado next.config.js e informar de onde vem a imagem
+
+Feito a estilização da Home
+
+
+Roteamento no next
+
+Nova page: episode.tsx
+
+Quando criamos uma page dentro da pasta pages e o arquivo nao inicia com _, o next forma como uma rota da aplicação. Porém, eu não vou saber, no nosso caso, qual episode é! Poderia ficar episode?id=1, mas não fica amigável ao user. Então queremos deixar episodes/o-nome-do-episodio
+Então, criar pasta episode dentro de /pages e o arquivo dentro. O nome slug seria o que vem depois de episode/ (no caso, o-nome-do-episode)
+Feito isso, deletar o arquivo episodes.tsx em /pages (o que acabamos de criar)
+Então, se eu acessar http://localhost:3000/episode/qualquer-merda-aqui, será acessado normalmente. E o nome ali será capturado pelo slug
+
+Certo, funciona já. ENTRETANTO, quando é redirecionado para a outra página, tudo é novamente recarregado, e isso não é legal.
+Para isso, import Link do next lá na Home
+
+Apesar de ser uma página estática, essa página para um episodio é dinamica. Ou seja, uma página estática dinamica. Pois ela pode ser diferente para cada episódio.
+Entao, devemos ter o método getStaticPaths nela tbm
+
+Em description, os dados são retornados com tags do html. Para isso não acontecer, usaremos a propriedade dangerouslySetInnerHTML na div
+
+#astronautas
