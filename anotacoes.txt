@@ -128,3 +128,26 @@ Entao, devemos ter o método getStaticPaths nela tbm
 Em description, os dados são retornados com tags do html. Para isso não acontecer, usaremos a propriedade dangerouslySetInnerHTML na div
 
 #astronautas
+
+
+Dia 4:
+
+getStaticPaths() é um método obrigatório em toda página estática e que tenha parâmetros dinâmicos [slug]
+
+Se o fallback estiver como false e não existir nenhuma rota em paths: [], todas as rotas que nao forem geradas de forma estática serão retornados com erro 404
+Se o fallback estiver como true, é possivel que exista erro no build, pois o next precisa fazer a requisição na api, e os dados que utilizamos no jsx podem estarem vazios ainda (carregamento feito no client)
+Se fallback estiver como blocking, o usuário só vai para a página solicitada quando os dados estiverem totalmente carregados. E esse carregamento é feito no servidor do next (que roda em node)
+
+blocking é a melhor opção a ser utilizada!
+
+Utilização da contextapi
+
+Criar pasta /contexts
+
+Como o contexto será utilizado em alguns componentes, vamos no arquivo raiz (_app) e inserimos dentro do contexto os componentes que o usarão
+
+
+Trabalhar com slider para o player, utilizar a lib rc-slider
+   yarn add rc-slider
+
+#universoinfinito
