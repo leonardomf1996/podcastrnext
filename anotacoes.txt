@@ -151,3 +151,18 @@ Trabalhar com slider para o player, utilizar a lib rc-slider
    yarn add rc-slider
 
 #universoinfinito
+
+
+Dia 5:
+
+Refatorar o contexto.
+Não é um problema deixar os métodos construídos no _app, mas e quando tiver outro contexto lá? Vai ficar uma bagunça
+Então, deixaremos os métodos dentro do arquivo de contexto. E mudaremos o formato do arquivo de ts para tsx
+
+
+
+O que pode ser melhorado:
+
+Responsividade
+PWA
+Tema dark (pode usar as cores do omni, da rocketseat)
